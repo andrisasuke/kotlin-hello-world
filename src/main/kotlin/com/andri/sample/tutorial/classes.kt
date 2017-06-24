@@ -4,6 +4,11 @@ class VerySimpleClass
 
 class Order( item: String, quantity: Int, price: Double) {
 
+    // initializer blocks
+    init {
+        println("Order initialized with value $item")
+    }
+
     // Setter and Getter
     var item: String  = item // the initializer value is written directly to the backing `field`
         get() = "get $field"
@@ -42,6 +47,17 @@ class Companion {
     }
 
     fun nonStaticInfo() : String = "this is non static function"
+}
+
+
+// Secondary constructor
+class Student(firstName: String) {
+    var firstName = firstName
+    var age: Int? = null
+
+    constructor(name: String, age: Int) : this(name) {
+        this.age = age
+    }
 }
 
 fun main(args: Array<String>) {
@@ -99,4 +115,10 @@ fun main(args: Array<String>) {
     val companion = Companion()
     println("Companion Object: meta - ${Companion.meta}, info - ${Companion.info()}")
     println("Companion Non Static: info - ${companion.nonStaticInfo()}")
+
+    val student = Student("Test 01")
+    println("student first_name: ${student.firstName} age: ${student.age}")
+
+    val secondStudent = Student("Test 02", 13)
+    println("student second_name: ${secondStudent.firstName} age: ${secondStudent.age}")
 }

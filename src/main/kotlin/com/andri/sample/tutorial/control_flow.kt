@@ -73,6 +73,11 @@ fun main(args : Array<String>) {
         print(" ")
     }
 
+    // Loop range
+    for (i in 1..100) {  }
+    for (p in 2..100 step 2)
+        for (z in 10 downTo 1) { }
+
     // Loop in Map
     val nzPop = mapOf("AUCK" to 1500000, "WLG" to 405000, "CHCH" to 500000, "GIS" to 36100)
     for ((key, value) in nzPop) {
